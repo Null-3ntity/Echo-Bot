@@ -1,5 +1,5 @@
 {
-  "name": "PannOffc",
+  "name": "Echo",
   "version": "3.0",
   "description": "Simple Bot Whatsapp With Baileys",
   "main": "index.js",
@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "PannOffc",
+  "author": "Null Entity ",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
