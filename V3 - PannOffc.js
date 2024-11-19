@@ -1,7 +1,7 @@
-//Rafzmods999
-//not sale this script
+//NullEntity
+//Not for sale 
 
-module.exports = async (PannOfficiaL, m, store) => {
+module.exports = async (Echo, m, store) => {
 try {
 const from = m.key.remoteJid
 const quoted = m.quoted ? m.quoted : m
@@ -9,18 +9,18 @@ var body = (m.mtype === 'interactiveResponseMessage') ? JSON.parse(m.message.int
 const budy = (typeof m.text == 'string' ? m.text : '')
 const prefix = /^[°zZ#$@+,.?=''():√%!¢£¥€π¤ΠΦ&><`™©®Δ^βα¦|/\\©^]/.test(body) ? body.match(/^[°zZ#$@+,.?=''():√%¢£¥€π¤ΠΦ&><!`™©®Δ^βα¦|/\\©^]/gi) : '.'
 const isCmd = body.startsWith(prefix)
-const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase() //kalau mau no prefix ganti jadi ini : const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
+const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase() //If you want no prefix to change it to this: const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 const args = body.trim().split(/ +/).slice(1)
 const mime = (quoted.msg || quoted).mimetype || ''
 const text = q = args.join(" ")
 const isGroup = from.endsWith('@g.us')
-const botNumber = await PannOfficiaL.decodeJid(PannOfficiaL.user.id)
-const sender = m.key.fromMe ? (PannOfficiaL.user.id.split(':')[0]+'@s.whatsapp.net' || PannOfficiaL.user.id) : (m.key.participant || m.key.remoteJid)
+const botNumber = await Echo.decodeJid(Echo.user.id)
+const sender = m.key.fromMe ? (Echo.user.id.split(':')[0]+'@s.whatsapp.net' || Echo.user.id) : (m.key.participant || m.key.remoteJid)
 const tescuk = ["0@s.whatsapp.net"]
 const senderNumber = sender.split('@')[0]
 const pushname = m.pushName || `${senderNumber}`
 const isBot = botNumber.includes(senderNumber)
-const groupMetadata = isGroup ? await PannOfficiaL.groupMetadata(m.chat).catch(e => {}) : ''
+const groupMetadata = isGroup ? await Echo.groupMetadata(m.chat).catch(e => {}) : ''
 const groupName = isGroup ? groupMetadata.subject : ''
 const participants = isGroup ? await groupMetadata.participants : ''
 const groupAdmins = isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
@@ -46,8 +46,8 @@ const thebug = fs.readFileSync(`./database/image/thebug.jpg`)
 const byxz = fs.readFileSync(`./database/image/PannOfficiaL.jpg`) 
 const zkosong = fs.readFileSync(`./database/image/zkosong.png`)
 
-const bugres = '›› ༂ 𝐀͖̈́͞𝐭𝐭̚𝐚̃𝐜̢̋͢𝐤𝐢𝐧̈́𝐠༗ ༂'
-const bugsuc = '『 🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋🫀 』\n\n🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐂𝐫𝐚𝐬𝐡 𝐕𝟐.𝟎\n\n  𝐍𝐎𝐓𝐄\n> Jika target masih c2 biarin aja tapi itu target tetap crash permanen'
+const bugres = 'Echo'
+const bugsuc = 'Echo\n\nEcho Crash V.2.0\n\n  𝐍𝐎𝐓𝐄\n> If the target is still c2, let it be, but it's still a permanent crash target' 
 // VIRTEX
 		const {
 			ios
@@ -69,7 +69,7 @@ const bugsuc = '『 🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋�
 	    } = require('./database/virtex/telapreta3.js')
 	    
 // Auto Blocked Nomor +212
-if (m.sender.startsWith('212')) return PannOfficiaL.updateBlockStatus(m.sender, 'block')
+if (m.sender.startsWith('212')) return Echo.updateBlockStatus(m.sender, 'block')
 
 // Random Color
 const listcolor = ['red','green','yellow','blue','magenta','cyan','white']
@@ -78,46 +78,46 @@ const randomcolor = listcolor[Math.floor(Math.random() * listcolor.length)]
 let run = runtime(process.uptime())
 
 
-// Command Yang Muncul Di Console
+// Commands that appear in the console 
 if (isCmd) {
-console.log(chalk.white.bgRed.bold('Ada Pesan, Om'), color(`[🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋🐦‍🔥 ]`, `green`), color(`FROM`, `red`), color(`${pushname}`, `red`), color(`Text :`, `yellow`), color(`${body}`, `blue`))
+console.log(chalk.white.bgRed.bold('There's a message, To'), color(`[Echo ]`, `green`), color(`FROM`, `red`), color(`${pushname}`, `red`), color(`Text :`, `yellow`), color(`${body}`, `blue`))
 }
 
         // Days
-        const hariini = moment.tz('Asia/Jakarta').format('dddd, DD MMMM YYYY')
-        const wib = moment.tz('Asia/Jakarta').format('HH : mm :ss')
-        const wit = moment.tz('Asia/Jayapura').format('HH : mm : ss')
-        const wita = moment.tz('Asia/Makassar').format('HH : mm : ss')
+        const harine = moment.tz('Asia/Jakarta').format('dddd, DD MMMM YYYY')
+        const Pm gmt = moment.tz('Asia/Jakarta').format('HH : mm :ss')
+        const white = moment.tz('Asia/Jayapura').format('HH : mm : ss')
+        const Welcomes = moment.tz('Asia/Makassar').format('HH : mm : ss')
 
         const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
         if (time2 < "23:59:00") {
-            var ucapanWaktu = 'Selamat Malam 🏙️'
+            var SpeechTime = 'Good evening 🏙️'
         }
         if (time2 < "19:00:00") {
-            var ucapanWaktu = 'Selamat Petang 🌆'
+            var SpeechTime = 'Good evening 🌆'
         }
         if (time2 < "18:00:00") {
-            var ucapanWaktu = 'Selamat Sore 🌇'
+            var SpeechTime = 'Good Afternoon 🌇'
         }
         if (time2 < "15:00:00") {
-            var ucapanWaktu = 'Selamat Siang 🌤️'
+            var SpeechTime = 'Good afternoon 🌤️'
         }
         if (time2 < "10:00:00") {
-            var ucapanWaktu = 'Selamat Pagi 🌄'
+            var SpeechTime = 'Good morning 🌄'
         }
         if (time2 < "05:00:00") {
-            var ucapanWaktu = 'Selamat Subuh 🌆'
+            var SpeechTime = 'Happy Dawn 🌆'
         }
         if (time2 < "03:00:00") {
-            var ucapanWaktu = 'Selamat Tengah Malam 🌃'
+            var SpeechTime = 'Good Midnight 🌃'
         }
        
-    PannOfficiaL.autoshalat = PannOfficiaL.autoshalat ? PannOfficiaL.autoshalat : {}
+    Echo.autoshalat = Echo.autoshalat ? Echo.autoshalat : {}
     let id = m.chat
-    if (id in PannOfficiaL.autoshalat) {
+    if (id in Echo.autoshalat) {
     return false
     }
-    let jadwalSholat = {
+    let Prayer Schedule = {
     shubuh: '04:29',
     terbit: '05:44',
     dhuha: '06:02',
@@ -126,7 +126,7 @@ console.log(chalk.white.bgRed.bold('Ada Pesan, Om'), color(`[🎭⃟𖤇𝐏𝐚
     magrib: '17:52',
     isya: '19:01',
     }
-    const datek = new Date((new Date).toLocaleString("en-US", {
+    const contribution = new Date((new Date).toLocaleString("en-US", {
     timeZone: "Asia/Jakarta"
     }));
     const hours = datek.getHours();
@@ -134,8 +134,8 @@ console.log(chalk.white.bgRed.bold('Ada Pesan, Om'), color(`[🎭⃟𖤇𝐏𝐚
     const timeNow = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`
     for (let [sholat, waktu] of Object.entries(jadwalSholat)) {
     if (timeNow === waktu) {
-        PannOfficiaL.autoshalat[id] = [
-            PannOfficiaL.sendMessage(m.chat, {
+        Echo.autoshalat[id] = [
+            Echo.sendMessage(m.chat, {
 audio: {
     url: 'https://media.vocaroo.com/mp3/1ofLT2YUJAjQ'
 },
@@ -146,7 +146,7 @@ contextInfo: {
         showAdAttribution: true,
         mediaType: 1,
         mediaUrl: '',
-        title: `Selamat Menunaikan Ibadah Sholat ${sholat}`,
+        title:  Performing Prayer ${sholat}`,
         body: `🕑 ${waktu}`,
         sourceUrl: '',
         thumbnail: await fs.readFileSync('./database/image/jadwal.jpg'),
@@ -171,14 +171,14 @@ remoteJid: ""
 'message': {
   "eventMessage": {
     "isCanceled": false,
-    "name": 'PannOfficiaL',
+    "name": 'Echo',
     "description": "Pntk",
     "location": {
       "degreesLatitude": 0,
       "degreesLongitude": 0,
       "name": "Apakajajanabs"
     },
-    "joinLink": "https://whatsapp.com/channel/0029VarGepU1dAw1U76h3S1k",
+    "joinLink": "https://whatsapp.com/channel/0029VaXUSu7LtOjGyZngjH1K",
     "startTime": "1713724680"
   }
 }
@@ -237,7 +237,7 @@ remoteJid: "status@broadcast"
 },
 message: {
 listResponseMessage: {
-title: `🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥🫀`
+title: `Echo`
 }
 }
 }
@@ -251,7 +251,7 @@ remoteJid: "status@broadcast"
 },
 message: {
 buttonsResponseMessage: {
-selectedButtonId: '🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋🫀',
+selectedButtonId: 'Echo',
 type: 1,
 response: {
 selectedDisplayText: 'penis'
@@ -290,7 +290,7 @@ amount1000: 999,
 requestFrom: '0@s.whatsapp.net',
 noteMessage: {
 extendedTextMessage: {
-text: `🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋🫀 `
+text: `Echo `
 }
 },
 expiryTimestamp: 999999999,
@@ -312,7 +312,7 @@ remoteJid: `status@broadcast`
 },
 message: {
 documentMessage: {
-title: `🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋🫀 `,
+title: `Echo `,
 }
 }
 }
@@ -342,8 +342,8 @@ remoteJid: "status@broadcast"
 },
 message: {
 "extendedTextMessage": {
-"text": `🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋🫀 `,
-"title": `🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥🫀`,
+"text": `echo `,
+"title": `Echo`,
 }
 }
 }
@@ -362,11 +362,11 @@ message: {
 "productImage": {
 "mimetype": "image/jpeg",
 },
-"title": `🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋🫀 `,
-"description": `🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋🫀`,
+"title": `Echo`,
+"description": `Echo`,
 "currencyCode": "IDR",
 "priceAmount1000": "1000000000000000000",
-"retailerId": `🎭⃟𖤇𝐏𝐚𝐧𝐧𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐋🫀 `,
+"retailerId": `Echo`,
 "productImageCount": 1
 },
 "businessOwnerJid": `0@s.whatsapp.net`
